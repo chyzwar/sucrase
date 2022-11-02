@@ -63,7 +63,7 @@ After changing swc to use transform instead transformSync
 
 
 Before on my ryzen system: 
-
+```
 HEAD is now at 7430a78244 chore: update emittery (#10990)
 Testing against 361206 LOC
 Sucrase     0.65 seconds    555255 lines per second
@@ -72,9 +72,9 @@ esbuild     1.91 seconds    188668 lines per second
 TypeScript  11.9 seconds    30359 lines per second
 Babel       12.57 seconds   28734 lines per second
 Done in 47.55s.
-
+```
 After changing to use async transform:
-
+```
 success Already up-to-date.
 Testing against 361206 LOC
 Sucrase     0.69 seconds    522928 lines per second
@@ -83,10 +83,7 @@ esbuild     1.77 seconds    204065 lines per second
 TypeScript  11.6 seconds    31141 lines per second
 Babel       12.5 seconds    28894 lines per second
 Done in 27.89s.
-
-After removing noise from benchmarks
-
-
+```
 
 Details: Measured on July 2022. Tools run in single-threaded mode without warm-up. See the
 [benchmark code](https://github.com/alangpierce/sucrase/blob/main/benchmark/benchmark.ts)
