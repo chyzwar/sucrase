@@ -234,19 +234,21 @@ async function benchmarkFiles(benchmarkOptions: BenchmarkOptions): Promise<void>
     "swc",
     benchmarkOptions,
     async (code: string, path: string) =>
-      swc.transformSync(code, {
-        jsc: {
-          parser: {
-            syntax: "typescript",
-            tsx: !path.endsWith(".ts"),
-            decorators: true,
+      (
+        await swc.transform(code, {
+          jsc: {
+            parser: {
+              syntax: "typescript",
+              tsx: !path.endsWith(".ts"),
+              decorators: true,
+            },
+            target: "es2022",
           },
-          target: "es2022",
-        },
-        module: {
-          type: "commonjs",
-        },
-      }).code,
+          module: {
+            type: "commonjs",
+          },
+        })
+      ).code,
   );
   // esbuild's transformSync has significant overhead since it spins up an
   // external process, so instead create a "service" process and communicate to
