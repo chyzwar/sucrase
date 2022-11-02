@@ -85,6 +85,17 @@ Babel       12.5 seconds    28894 lines per second
 Done in 27.89s.
 ```
 
+Another problem with benchmarks was pre-loading of surcase by using surcase-node. After switching to more "neutral" ts-node
+
+```
+Sucrase     6.6 seconds     54702 lines per second
+swc         0.47 seconds    772023 lines per second
+esbuild     1.84 seconds    196118 lines per second
+TypeScript  11.24 seconds   32129 lines per second
+Babel       12.96 seconds   27861 lines per second
+Done in 35.52s.
+```
+
 Details: Measured on July 2022. Tools run in single-threaded mode without warm-up. See the
 [benchmark code](https://github.com/alangpierce/sucrase/blob/main/benchmark/benchmark.ts)
 for methodology and caveats.

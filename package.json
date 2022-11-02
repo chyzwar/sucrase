@@ -16,7 +16,7 @@
     "fast-build": "sucrase-node script/build.ts --fast",
     "clean": "rm -rf ./build ./dist ./dist-self-build ./dist-types ./example-runner/example-repos ./spec-compliance-tests/test262/test262-checkout ./spec-compliance-tests/babel-tests/babel-tests-checkout",
     "generate": "sucrase-node generator/generate.ts",
-    "benchmark": "cd benchmark && yarn && sucrase-node ./benchmark.ts",
+    "benchmark": "cd benchmark && yarn && ts-node ./benchmark.ts",
     "benchmark-compare": "sucrase-node ./benchmark/compare-performance.ts",
     "microbenchmark": "sucrase-node benchmark/microbenchmark.ts",
     "lint": "sucrase-node script/lint.ts",
@@ -75,7 +75,8 @@
     "lines-and-columns": "^1.1.6",
     "mz": "^2.7.0",
     "pirates": "^4.0.1",
-    "ts-interface-checker": "^0.1.9"
+    "ts-interface-checker": "^0.1.9",
+    "ts-node": "^10.9.1"
   },
   "engines": {
     "node": ">=8"
